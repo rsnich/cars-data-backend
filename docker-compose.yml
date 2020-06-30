@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    container_name: cars-backend
+    image: cars-backend
+    restart: always
+    build: .
+    ports: [ '3000:3000' ]
+    links: [ mongo ]
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports: [ '27017:27017' ]
